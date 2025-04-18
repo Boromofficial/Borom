@@ -21,16 +21,16 @@
     }
     .card-container {
       display: grid; /* เปลี่ยนเป็น grid layout */
-      grid-template-columns: repeat(2, auto); /* กำหนด 2 คอลัมน์ ขนาด auto */
-      justify-content: center; /* จัดตรงกลางแนวนอน */
-      gap: 20px;
+      grid-template-columns: repeat(2, auto); /* สร้าง 2 คอลัมน์ ขนาดอัตโนมัติ */
+      justify-content: center; /* จัดให้เนื้อหาอยู่ตรงกลาง */
+      gap: 20px; /* ระยะห่างระหว่างคอลัมน์และแถว */
       margin-top: 50px;
     }
     .card-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 30px; /* เพิ่ม margin ด้านล่างเพื่อเว้นระยะห่างระหว่างแถว */
+      margin-bottom: 30px; /* เพิ่มระยะห่างด้านล่างแต่ละกลุ่มไพ่ */
     }
     .card {
       width: 150px;
@@ -96,24 +96,10 @@
       <div class="card" onclick="revealReward(this)">
         <div class="card-inner">
           <div class="card-front">
-            <img src="https://i.postimg.cc/Mc1Yk6JG/Chat-GPT-Image-Apr-18-2025-at-03-45-39-PM-0.png" alt="ไพ่">
-          </div>
-          <div class="card-back">
-            🎁 ได้รับส่วนลด 10%
-          </div>
-        </div>
-      </div>
-      <div class="reward"></div>
-    </div>
-
-    <div class="card-wrapper">
-      <div class="card" onclick="revealReward(this)">
-        <div class="card-inner">
-          <div class="card-front">
             <img src="https://i.postimg.cc/HcH9dqT9/Chat-GPT-Image-Apr-18-2025-at-04-16-49-PM-0.png" alt="ไพ่">
           </div>
           <div class="card-back">
-            💖 ได้รับส่วนลด 12%
+            Get 100.- off
           </div>
         </div>
       </div>
@@ -127,7 +113,7 @@
             <img src="https://i.postimg.cc/7GVM6K68/Chat-GPT-Image-Apr-18-2025-at-04-37-05-PM-0.png" alt="ไพ่">
           </div>
           <div class="card-back">
-            ⭐ ได้รับส่วนลด 15%
+            Get 200.- off
           </div>
         </div>
       </div>
@@ -141,7 +127,21 @@
             <img src="https://i.postimg.cc/tYgD1GWr/Chat-GPT-Image-Apr-18-2025-at-04-48-55-PM-0.png" alt="ไพ่">
           </div>
           <div class="card-back">
-            💎 รับสิทธิ์ซื้อน้ำหอม 2 ขวดคู่กันราคาพิเศษ
+            Get 300.- off
+          </div>
+        </div>
+      </div>
+      <div class="reward"></div>
+    </div>
+
+    <div class="card-wrapper">
+      <div class="card" onclick="revealReward(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://i.postimg.cc/HcH9dqT9/Chat-GPT-Image-Apr-18-2025-at-04-16-49-PM-0.png" alt="ไพ่">
+          </div>
+          <div class="card-back">
+            Get 500.- off
           </div>
         </div>
       </div>
@@ -150,25 +150,12 @@
   </div>
 
   <script>
-    const rewards = [
-      "🎁 ได้รับส่วนลด 10%",
-      "💖 ได้รับส่วนลด 12%",
-      "⭐ ได้รับส่วนลด 15%",
-      "💎 รับสิทธิ์ซื้อน้ำหอม 2 ขวดคู่กันราคาพิเศษ"
-    ];
-
     let flippedCard = null;
 
     function revealReward(card) {
       if (flippedCard || card.classList.contains("flipped")) return;
 
       card.classList.add("flipped");
-
-      // Show the reward on the back of the card
-      const rewardText = card.querySelector('.card-back').textContent;
-      const wrapper = card.parentElement;
-      const rewardDiv = wrapper.querySelector(".reward");
-      rewardDiv.textContent = rewardText;
 
       flippedCard = card;
     }
