@@ -6,13 +6,19 @@
   <title>PICK YOUR SUMMER PERK!</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%; /* ให้ทั้ง body และ html ครอบคลุมทั้งหน้าจอ */
+      overflow: hidden; /* ไม่ให้แสดง scroll bar */
+    }
+
     body {
       background-image: url('https://i.postimg.cc/k2cd9b3V/your-image.jpg');
-      background-size: cover;
+      background-size: cover; /* ให้ภาพพื้นหลังขยายเต็มหน้าจอ */
       background-position: center;
       font-family: 'Noto Sans Thai', sans-serif;
       text-align: center;
-      padding: 30px 10px;
       color: black;
     }
 
